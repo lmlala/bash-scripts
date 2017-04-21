@@ -1,6 +1,6 @@
-# for mac iterm2
-# auto re-color & re-name tab  when ssh to a remote server
-# aviod to mistake operations on some import servers
+for mac iterm2
+auto re-color & re-name tab  when ssh to a remote server
+aviod to mistake operations on some import servers
 
 Steps
 -------------
@@ -20,7 +20,7 @@ Host dev-n01
   User root
   IdentityFile ~/data/keys/mykey
 
-```bash
+```
 
 
 2. update ~/.zshrc   for customized your ssh
@@ -70,4 +70,4 @@ function ssh() {
 }
 
 
-```bash
+```
