@@ -1,10 +1,11 @@
 for mac iterm2
 auto re-color & re-name tab  when ssh to a remote server
-aviod to mistake operations on some import servers
+aviod to mistake operations on some important servers
 
-Steps
+## Steps
 -------------
-1. update ~/.ssh/config for hostname alias and priority identified
+#### 1. Config your host
+update ~/.ssh/config for hostname alias and priority identified
 
 ```bash
 
@@ -22,8 +23,8 @@ Host dev-n01
 
 ```
 
-
-2. update ~/.zshrc   for customized your ssh
+#### 2. Plugin script
+Put following content in a file called `item2-ssh.plugin.zsh`
 
 ```bash
 
@@ -68,6 +69,28 @@ function chtitle() {
 function ssh() {
      chtitle $*
 }
+```
 
+#### 3. Enable the plugin
 
+##### Without `oh-my-zsh`:
+put `item2-ssh.plugin.zsh` in any place like `~/.plugins`,
+append fllowing line in your `~/.zshrc`:
+```sh
+source ~/.plugins/item2-ssh.plugin.zsh
+```
+
+##### With `oh-my-zsh`:
+put the plugin file under `~/.oh-my-zsh/custome/plugins/item2-ssh/`,
+and append __item2-ssh__ in the constant `plugins` defined in `~/.zshrc`:
+```sh
+...
+plugins=(git item2-ssh)
+...
+```
+
+#### 4. Restart __zsh__
+
+```sh
+exec $SHELL
 ```
