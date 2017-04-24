@@ -1,3 +1,6 @@
+# enable manually title 
+DISABLE_AUTO_TITLE="true"
+
 function tab-color() {
     echo -e "\033]6;1;bg;$1;brightness;255\a"
 }
