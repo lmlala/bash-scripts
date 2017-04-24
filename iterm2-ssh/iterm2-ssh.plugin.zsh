@@ -1,32 +1,3 @@
-for mac iterm2
-auto re-color & re-name tab  when ssh to a remote server
-aviod to mistake operations on some import servers
-
-Steps
--------------
-1. update ~/.ssh/config for hostname alias and priority identified
-
-```bash
-
-Host d01
-  HostName 192.168.100.11
-  Port 22
-  User root
-  IdentityFile ~/data/keys/mykey
-
-Host dev-n01
-  HostName 172.16.30.101
-  Port 22
-  User root
-  IdentityFile ~/data/keys/mykey
-
-```
-
-
-2. update ~/.zshrc   for customized your ssh
-
-```bash
-
 function tab-color() {
     echo -e "\033]6;1;bg;$1;brightness;255\a"
 }
@@ -68,6 +39,3 @@ function chtitle() {
 function ssh() {
      chtitle $*
 }
-
-
-```
